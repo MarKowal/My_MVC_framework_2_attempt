@@ -9,18 +9,27 @@ class Router {
     //1. proste dodawanie route ze stałymi parametrami:
     public function add($route, $params = []){
         //funkcja uzupełnia routing table
+       
         //1.usuwa z route ukośnik
         $reg_exp = '/\//';
         $replacement = '\\/';
         //$route = '{controller}/{action}';
         $route = preg_replace($reg_exp, $replacement, $route);
+        
         //2.zamienia nawiasy {} na regexa
         $reg_exp = '/\{([a-z]+)}/';
         $replacement = '(?P<\1>[a-z-]+)';
         $route = preg_replace($reg_exp, $replacement, $route);
-        //3.dodaje początek i koniec regexa zrobionego z routa
+        
+        //3.opcjonalnie dodaje id, czyli liczby w route
+        $reg_exp = '/\{([a-z]+):([^\}]+)\}/';
+        $replacement = '(?P<\1>\2)';
+        $route = preg_replace($reg_exp, $replacement, $route);
+        
+        //4.dodaje początek i koniec regexa zrobionego z routa
         $route = '/^'.$route.'$/i';
-        //4.zapisuje routa-regexa w routing table
+        
+        //5.zapisuje routa-regexa w routing table
         $this->routes[$route] = $params; //params to controller i action
     }
 

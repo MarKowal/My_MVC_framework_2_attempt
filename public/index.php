@@ -20,6 +20,7 @@ $router->add('', ['controller' => 'Home', 'action'=>'index']);
 $router->add('{controller}/{action}');
 $router->add('admin/{action}/{controller}');
 $router->add('products/{controller}/{action}');
+$router->add('{controller}/{id:\d+}/{action}');
 
 //wyświetlenie routing table:
 echo '<pre>';
@@ -66,16 +67,22 @@ $result3 = '/^'.$result2.'$/i';
 echo "<p>$result3</p>";
 
 echo '------------------';*/
-$reg_exp = '/\//';
+
+
+/*$reg_exp = '/\//';
 $replacement = '\\/';
-$route = '{controller}/{action}';
+//$route = '{controller}/{action}';
+$route = '{controller}/{id:\d+}/{action}';
 $route = preg_replace($reg_exp, $replacement, $route);
 
 $reg_exp = '/\{([a-z]+)}/';
 $replacement = '(?P<\1>[a-z-]+)';
 $route = preg_replace($reg_exp, $replacement, $route);
 
-$route = '/^'.$route.'$/i';
-echo "<p>$route</p>";
+$reg_exp = '/\{([a-z]+):([^\}]+)\}/';
+$replacement = '(?P<\1>\2)';
+$route = preg_replace($reg_exp, $replacement, $route);
 
+$route = '/^'.$route.'$/i';
+echo "<p>$route</p>";*/
 ?>
