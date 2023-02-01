@@ -1,7 +1,6 @@
 <?php
 
-//FRONT CONTROLLER
-
+echo "<h1>FRONT CONTROLLER</h1>";
 echo "<h1>Routing table</h1>";
 
 //echo 'Requested route = '.$_SERVER['QUERY_STRING'].'<br>'.'<br>';
@@ -10,6 +9,9 @@ echo "<h1>Routing table</h1>";
 //echo 'Other things from $_SERVER = '.$_SERVER['SCRIPT_NAME'].'<br>';
 
 require '../Core/Router.php';
+require '../App/Controllers/Posts.php';
+
+
 $router = new Router();
 //echo get_class($router);  //zwraca nazwę klasy danego obiektu
 
@@ -28,11 +30,12 @@ echo '<pre>';
     var_dump($router->getRoutes());
 echo '</pre>';
 
-//sprawdzanie czy URL pasuje z jakimś routem:
+//wyświetlenie i sprawdzanie czy URL pasuje z jakimś routem:
 $url = $_SERVER['QUERY_STRING'];
 if($router->match($url)){
     echo '<pre>';    
-    echo 'PARAMETERS:<br>';
+    echo 'URL = '.$url."<br>";
+    echo '<br>PARAMETERS:<br>';
     var_dump($router->getParams());
     echo '</pre>';
 } else {
@@ -85,4 +88,35 @@ $route = preg_replace($reg_exp, $replacement, $route);
 
 $route = '/^'.$route.'$/i';
 echo "<p>$route</p>";*/
+
+
+/*
+//ĆWICZENIE DYNAMICZNEGO TWORZENIA KLAS I WYWOŁYWANIA METOD:
+class Post{
+    public function print_message($name){
+        echo "<br>this is ".$name." from class Post - DYNAMICALLY!<br>";
+    }
+}
+$class_name = "Post";
+$method_name = "print_message";
+if(class_exists($class_name)){
+    $post = new $class_name();
+    if(is_callable([$post, $method_name])){
+        call_user_func_array([$post, $method_name], ["Marek"]);
+    } else {
+        echo "There is no such method";
+    }
+} else {
+    echo "There is no such class";
+}
+//$post = new Post();
+//$post->print_message();
+*/
+
+
+$router->dispatch($_SERVER['QUERY_STRING']);
+
+
+
+
 ?>
