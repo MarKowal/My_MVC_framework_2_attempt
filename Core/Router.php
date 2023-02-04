@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class Router {
 
     //routing table to tablica asocjacyjna:
@@ -82,6 +84,8 @@ class Router {
             $controller = $this->params['controller'];
             //zamiana pierwszej litery na dużą literę:
             $controller = $this->convertToStudlyCaps($controller);
+            //dodanie namespace:
+            $controller = "App\Controllers\\$controller";
 
             if(class_exists($controller)){
                 //dynamicznie tworzę obiekt klasy kontroler:

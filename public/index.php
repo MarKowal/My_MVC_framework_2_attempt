@@ -1,5 +1,6 @@
 <?php
 
+
 echo "<h1>FRONT CONTROLLER</h1>";
 echo "<h1>Routing table</h1>";
 
@@ -8,11 +9,24 @@ echo "<h1>Routing table</h1>";
 //echo 'Other things from $_SERVER = '.$_SERVER['DOCUMENT_ROOT'].'<br>';
 //echo 'Other things from $_SERVER = '.$_SERVER['SCRIPT_NAME'].'<br>';
 
-require '../Core/Router.php';
-require '../App/Controllers/Posts.php';
+//poniższe require jest niepotrzebne bo mam Autoloader dla klas
+//require '../Core/Router.php';
+//require '../App/Controllers/Posts.php';
 
+//AUTOLOADER dla klas:
+spl_autoload_register(function ($class){
+    //wyszukuję główny folder "parent directory"
+    $root = dirname(__DIR__);
+    //przerabiam namespace który przychodzi z dispatch()
+    $file = $root.'/'.str_replace('\\', '/', $class).'.php';
+    //jeżeli można odczytać powyższą ścieżkę do pliku to robie rquire
+    if(is_readable($file)){
+        require $root.'/'.str_replace('\\', '/', $class).'.php';
+    }
 
-$router = new Router();
+});
+
+$router = new Core\Router();
 //echo get_class($router);  //zwraca nazwę klasy danego obiektu
 
 
@@ -115,8 +129,6 @@ if(class_exists($class_name)){
 
 
 $router->dispatch($_SERVER['QUERY_STRING']);
-
-
 
 
 ?>
