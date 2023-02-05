@@ -79,6 +79,9 @@ class Router {
     //DISPATCH - rozdzielenie URL na Controller i Action
     //żeby dynamicznie stworzyć obiekt i uruchomić metodę:
     public function dispatch($url){
+
+        $url = $this->removeQueryStringVariables($url);
+
         if($this->match($url)){
             //wyciągnięcie z parametrów nazwy kontrolera:
             $controller = $this->params['controller'];
@@ -115,6 +118,24 @@ class Router {
 
     protected function convertToCamelCase($string){
         return lcfirst($this->convertToStudlyCaps($string));
+    }
+
+    protected function removeQueryStringVariables($url){
+        //funkcja usuwa z URL dodatki typu ?page=2&view=print
+        //zostaje tylko controller/action do użycia w dispatch()
+        if($url != ''){
+            $parts = explode('&', $url, 2);
+                /*foreach($parts as $part){
+                    echo '<br>$parts = '.$part.'<br>';
+                }*/
+            if(strpos($parts[0], '=') === false){
+                $url = $parts[0];
+            } else{
+                $url = '';
+            }
+        }
+
+        return $url;
     }
 
 
