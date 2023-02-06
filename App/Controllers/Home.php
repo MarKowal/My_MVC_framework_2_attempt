@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Home{
+class Home extends \Core\Controller{
     
     public function index(){
         echo "Hello from the index acion in the Home controller!";

@@ -49,7 +49,7 @@ $url = $_SERVER['QUERY_STRING'];
 echo 'URL czyli $_SERVER["QUERY_STRING"]  =  '.$url.'<br>';
 if($router->match($url)){
     echo '<pre>';    
-    echo '<br>PARAMETERS:<br>';
+    echo '<br>PARAMETERS on router:<br>';
     var_dump($router->getParams());
     echo '</pre>';
 } else {

@@ -83,6 +83,8 @@ class Router {
         $url = $this->removeQueryStringVariables($url);
 
         if($this->match($url)){
+
+            $url = trim($url, "/");
             //wyciągnięcie z parametrów nazwy kontrolera:
             $controller = $this->params['controller'];
             //zamiana pierwszej litery na dużą literę:
@@ -92,8 +94,8 @@ class Router {
 
             if(class_exists($controller)){
                 //dynamicznie tworzę obiekt klasy kontroler:
-                $controller_object = new $controller();
-
+                echo var_dump($this->params)."<br>";
+                $controller_object = new $controller($this->params);
                 //wyciągnięcie z parametrów nazwy action:
                 $action = $this->params['action'];
                 $action = $this->convertToCamelCase($action);
