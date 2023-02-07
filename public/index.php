@@ -128,7 +128,24 @@ if(class_exists($class_name)){
 */
 
 
+
 $router->dispatch($_SERVER['QUERY_STRING']);
 
+
+/*
+class Animal{
+    private function bark(){
+        echo '<br>Bark!<br>';
+    }
+}
+
+$animal = new Animal();
+//$animal->bark();
+
+class Dog extends Animal{}
+
+$dog = new Dog();
+$dog->bark();
+*/
 
 ?>

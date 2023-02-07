@@ -3,9 +3,18 @@
 namespace App\Controllers;
 
 class Home extends \Core\Controller{
+
+    protected function before(){
+        echo '<p>(before)</p>';
+        return false;
+    }
+
+    protected function after(){
+        echo '<p>(after)</p>';
+    }
     
-    public function index(){
-        echo "Hello from the index acion in the Home controller!";
+    public function indexAction(){
+        echo "Hello from the index action in the Home controller!";
     }
 }
 

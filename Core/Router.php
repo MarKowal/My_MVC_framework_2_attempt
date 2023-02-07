@@ -95,6 +95,7 @@ class Router {
             if(class_exists($controller)){
                 //dynamicznie tworzę obiekt klasy kontroler:
                 echo var_dump($this->params)."<br>";
+                //do stworzenia obiektu klasy kontroler potrzeba parametrów z routera
                 $controller_object = new $controller($this->params);
                 //wyciągnięcie z parametrów nazwy action:
                 $action = $this->params['action'];
