@@ -101,7 +101,15 @@ class Router {
                 $action = $this->params['action'];
                 $action = $this->convertToCamelCase($action);
 
+                /*
                 if(is_callable([$controller_object, $action])){
+                    //wywołanie metody na obiekcie:
+                    $controller_object->$action();
+                */
+
+                //sprawdzenie czy URL zawiera Action na końcu
+                //lepiej żeby nie zawierał
+                if (preg_match('/action$/i', $action) == 0) {
                     //wywołanie metody na obiekcie:
                     $controller_object->$action();
                 } else{
