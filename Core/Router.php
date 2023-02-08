@@ -90,7 +90,8 @@ class Router {
             //zamiana pierwszej litery na dużą literę:
             $controller = $this->convertToStudlyCaps($controller);
             //dodanie namespace:
-            $controller = "App\Controllers\\$controller";
+            //$controller = "App\Controllers\\$controller";
+            $controller = $this->getNamespace().$controller;
 
             if(class_exists($controller)){
                 //dynamicznie tworzę obiekt klasy kontroler:
@@ -149,5 +150,15 @@ class Router {
         return $url;
     }
 
+    //funkcja pozwala użytkownikowi na wskazanie namespace w route
+    protected function getNamespace(){
+        $namespace = 'App\Controllers\\';
+
+        if(array_key_exists('namespace', $this->params)){
+            $namespace .= $this->params['namespace'].'\\';
+        }
+
+        return $namespace;
+    }
 
 }
