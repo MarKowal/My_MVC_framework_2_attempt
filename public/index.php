@@ -1,7 +1,7 @@
 <?php
 
 
-echo "<h1>FRONT CONTROLLER</h1>";
+//echo "<h1>FRONT CONTROLLER</h1>";
 
 //echo 'Requested route = '.$_SERVER['QUERY_STRING'].'<br>'.'<br>';
 //echo 'Other things from $_SERVER = '.$_SERVER['SERVER_NAME'].'<br>';
@@ -36,14 +36,16 @@ $router->add('{controller}/{action}');
 $router->add('admin/{controller}/{action}', ['namespace' => 'Admin']);
 //$router->add('products/{controller}/{action}');
 $router->add('{controller}/{id:\d+}/{action}');
-
+/*
 //wyświetlenie routing table:
 echo "<h1>Routing table</h1>";
 echo '<pre>';
     echo 'ROUTES:<br>';
     var_dump($router->getRoutes());
 echo '</pre>';
+*/
 
+/*
 //wyświetlenie i sprawdzanie czy URL pasuje z jakimś routem:
 $url = $_SERVER['QUERY_STRING'];
 echo 'URL czyli $_SERVER["QUERY_STRING"]  =  '.$url.'<br>';
@@ -55,6 +57,7 @@ if($router->match($url)){
 } else {
     echo "No route found for this URL = ".$_SERVER['QUERY_STRING'];
 }
+*/
 
 /*$reg_exp = "/ab(C)de(F)/";
 $replacement = '\1wz67 \2er89';
