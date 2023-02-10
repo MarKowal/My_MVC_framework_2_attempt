@@ -5,9 +5,12 @@ namespace Core;
 class View{
 
     //funkcja wyświetla podesłane pliki
-    public static function render($view){
+    public static function render($view, $args = []){
+
+        extract($args, EXTR_SKIP);
         
-        $file = "../App/Views/$view";
+        //podstawowy folder w którym są pliki view:
+        $file = "../App/Views/$view"; 
         
         if(is_readable($file)){
             require $file;
