@@ -4,7 +4,7 @@ namespace Core;
 
 class View{
 
-    //funkcja wyświetla pliki
+    //funkcja wyświetla podesłane pliki
     public static function render($view){
         
         $file = "../App/Views/$view";
