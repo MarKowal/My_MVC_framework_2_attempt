@@ -12,6 +12,9 @@
 //require '../Core/Router.php';
 //require '../App/Controllers/Posts.php';
 
+require_once dirname(__DIR__).'/vendor/autoload.php';
+
+
 //AUTOLOADER dla klas:
 spl_autoload_register(function ($class){
     //wyszukuję główny folder "parent directory"

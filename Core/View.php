@@ -18,6 +18,18 @@ class View{
             echo "$file not found";
         }
     }
+
+    //funkcja renderująca ale wykorzystujaca Twig:
+    public static function renderTemplate(string $template, array $args = []){
+        static $twig = null;
+
+        if($twig === null){
+            $loader = new \Twig\Loader\FilesystemLoader('../App/Views');
+            $twig = new \Twig\Environment($loader);
+        }
+
+        echo $twig->render($template, $args);
+    }
 }
 
 
