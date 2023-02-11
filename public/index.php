@@ -12,10 +12,13 @@
 //require '../Core/Router.php';
 //require '../App/Controllers/Posts.php';
 
-require_once dirname(__DIR__).'/vendor/autoload.php';
+//require_once dirname(__DIR__).'/vendor/autoload.php';
 
+//załadowanie Autoloadera z Composer:
+require '../vendor/autoload.php';
 
-//AUTOLOADER dla klas:
+/*
+//AUTOLOADER dla klas - został zastąpiony przez Autoloader Composera w pliku composer.json:
 spl_autoload_register(function ($class){
     //wyszukuję główny folder "parent directory"
     $root = dirname(__DIR__);
@@ -27,6 +30,7 @@ spl_autoload_register(function ($class){
     }
 
 });
+*/
 
 $router = new Core\Router();
 //echo get_class($router);  //zwraca nazwę klasy danego obiektu
