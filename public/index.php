@@ -12,8 +12,8 @@
 //require '../Core/Router.php';
 //require '../App/Controllers/Posts.php';
 
-require_once dirname(__DIR__).'/vendor/autoload.php';
-
+//require_once dirname(__DIR__).'/vendor/autoload.php';
+require '../vendor/autoload.php';
 
 //AUTOLOADER dla klas:
 spl_autoload_register(function ($class){
