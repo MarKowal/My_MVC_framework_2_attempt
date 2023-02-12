@@ -25,7 +25,7 @@ class Home extends \Core\Controller{
         ]);
         */
         View::renderTemplate('Home/index.html', [
-            'name' => 'Peter',
+            'name' => 'Karol',
             'title' => 'the Third']);
     }
 }
