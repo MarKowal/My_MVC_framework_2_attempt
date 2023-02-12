@@ -32,6 +32,11 @@ spl_autoload_register(function ($class){
 });
 */
 
+//ERROR handler:
+set_error_handler('Core\Error::errorHandler');
+set_exception_handler('Core\Error::exceptionHandler');
+
+
 $router = new Core\Router();
 //echo get_class($router);  //zwraca nazwę klasy danego obiektu
 

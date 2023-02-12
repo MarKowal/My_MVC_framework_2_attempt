@@ -24,6 +24,8 @@ abstract class Model{
                 //$stmt = $db->query('SELECT id, title, content FROM posts ORDER BY created_at');
                 //$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
             } catch (\PDOException $e) {
                 echo $e->getMessage();
             }
