@@ -22,12 +22,12 @@ abstract class Model{
                 //$stmt = $db->query('SELECT id, title, content FROM posts ORDER BY created_at');
                 //$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                return $db;
-
             } catch (\PDOException $e) {
                 echo $e->getMessage();
             }
         }
+
+        return $db;
 
     }
 
