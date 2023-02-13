@@ -123,7 +123,7 @@ class Router {
             }
         } else{
             //echo '<br>No route matched.';
-            throw new \Exception('<br>No route matched.');
+            throw new \Exception('<br>No route matched.', 404);
         }
     }
 
