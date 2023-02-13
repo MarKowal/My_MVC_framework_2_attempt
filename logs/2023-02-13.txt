@@ -1,40 +1,10 @@
-[13-Feb-2023 16:42:23 Europe/Berlin] 
-Uncaught exception: 'Exception'with message: '<br>Controller class App\Controllers\Animal not found.'
-Stack trace:#0 C:\xampp\htdocs\My_MVC_framework_2_attempt\public\index.php(148): Core\Router->dispatch('animal/cat')
-#1 {main}
-Thrown in 'C:\xampp\htdocs\My_MVC_framework_2_attempt\Core\Router.php' on line 122
-[13-Feb-2023 16:53:35 Europe/Berlin] 
-Uncaught exception: 'Exception'with message: '<br>Controller class App\Controllers\Profile not found.'
-Stack trace:#0 C:\xampp\htdocs\My_MVC_framework_2_attempt\public\index.php(148): Core\Router->dispatch('profile/show')
-#1 {main}
-Thrown in 'C:\xampp\htdocs\My_MVC_framework_2_attempt\Core\Router.php' on line 122
-[13-Feb-2023 16:54:16 Europe/Berlin] 
-Uncaught exception: 'Error'with message: 'Call to a member function query() on null'
-Stack trace:#0 C:\xampp\htdocs\My_MVC_framework_2_attempt\App\Controllers\Posts.php(14): App\Models\Post::getAll()
-#1 [internal function]: App\Controllers\Posts->indexAction()
-#2 C:\xampp\htdocs\My_MVC_framework_2_attempt\Core\Controller.php(21): call_user_func_array(Array, Array)
-#3 C:\xampp\htdocs\My_MVC_framework_2_attempt\Core\Router.php(115): Core\Controller->__call('index', Array)
-#4 C:\xampp\htdocs\My_MVC_framework_2_attempt\public\index.php(148): Core\Router->dispatch('posts/index')
-#5 {main}
-Thrown in 'C:\xampp\htdocs\My_MVC_framework_2_attempt\App\Models\Post.php' on line 20
-[13-Feb-2023 16:55:38 Europe/Berlin] 
-Uncaught exception: 'Exception'with message: 'Method nneAction not found in controller App\Controllers\Posts'
-Stack trace:#0 C:\xampp\htdocs\My_MVC_framework_2_attempt\Core\Router.php(115): Core\Controller->__call('nne', Array)
-#1 C:\xampp\htdocs\My_MVC_framework_2_attempt\public\index.php(148): Core\Router->dispatch('posts/nne')
-#2 {main}
-Thrown in 'C:\xampp\htdocs\My_MVC_framework_2_attempt\Core\Controller.php' on line 26
-[13-Feb-2023 16:59:47 Europe/Berlin] 
+[13-Feb-2023 17:12:54 Europe/Berlin] 
 Uncaught exception: 'Exception'with message: '<br>No route matched.'
-Stack trace:#0 C:\xampp\htdocs\My_MVC_framework_2_attempt\public\index.php(148): Core\Router->dispatch('products/brand/...')
+Stack trace:#0 C:\xampp\htdocs\My_MVC_framework_2_attempt\public\index.php(148): Core\Router->dispatch('skytower')
 #1 {main}
 Thrown in 'C:\xampp\htdocs\My_MVC_framework_2_attempt\Core\Router.php' on line 126
-[13-Feb-2023 16:59:48 Europe/Berlin] 
+[13-Feb-2023 17:14:32 Europe/Berlin] 
 Uncaught exception: 'Exception'with message: '<br>No route matched.'
-Stack trace:#0 C:\xampp\htdocs\My_MVC_framework_2_attempt\public\index.php(148): Core\Router->dispatch('products/brand/...')
-#1 {main}
-Thrown in 'C:\xampp\htdocs\My_MVC_framework_2_attempt\Core\Router.php' on line 126
-[13-Feb-2023 17:02:32 Europe/Berlin] 
-Uncaught exception: 'Exception'with message: '<br>No route matched.'
-Stack trace:#0 C:\xampp\htdocs\My_MVC_framework_2_attempt\public\index.php(148): Core\Router->dispatch('burgers')
+Stack trace:#0 C:\xampp\htdocs\My_MVC_framework_2_attempt\public\index.php(148): Core\Router->dispatch('blindMan')
 #1 {main}
 Thrown in 'C:\xampp\htdocs\My_MVC_framework_2_attempt\Core\Router.php' on line 126
