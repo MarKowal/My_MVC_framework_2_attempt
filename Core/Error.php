@@ -13,7 +13,6 @@ class Error{
 
     public static function exceptionHandler($exception){
 
-        //HTTP error codes - 404 and 500:
         $code = $exception->getCode();
 
         if($code != 404){
@@ -38,14 +37,7 @@ class Error{
             $message .= "\nThrown in '".$exception->getFile()."' on line ".$exception->getLine();
             
             error_log($message);
-            //echo "<h1>An error occurred</h1>";
-            /*
-            if($code == 404){
-                echo "<h1>Page not found!</h1>";
-            } else {
-                echo "<h1>A server error occurred!</h1>";
-            }
-            */
+            
             View::renderTemplate("$code.html");
         }
     }
