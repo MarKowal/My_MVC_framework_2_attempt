@@ -8,3 +8,13 @@ Uncaught exception: 'Exception'with message: '<br>No route matched.'
 Stack trace:#0 C:\xampp\htdocs\My_MVC_framework_2_attempt\public\index.php(148): Core\Router->dispatch('blindMan')
 #1 {main}
 Thrown in 'C:\xampp\htdocs\My_MVC_framework_2_attempt\Core\Router.php' on line 126
+[13-Feb-2023 17:17:46 Europe/Berlin] 
+Uncaught exception: 'Exception'with message: '<br>No route matched.'
+Stack trace:#0 C:\xampp\htdocs\My_MVC_framework_2_attempt\public\index.php(148): Core\Router->dispatch('products/brand/...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\My_MVC_framework_2_attempt\Core\Router.php' on line 126
+[13-Feb-2023 17:17:47 Europe/Berlin] 
+Uncaught exception: 'Exception'with message: '<br>No route matched.'
+Stack trace:#0 C:\xampp\htdocs\My_MVC_framework_2_attempt\public\index.php(148): Core\Router->dispatch('products/brand/...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\My_MVC_framework_2_attempt\Core\Router.php' on line 126
