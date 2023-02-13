@@ -114,13 +114,16 @@ class Router {
                     //wywołanie metody na obiekcie:
                     $controller_object->$action();
                 } else{
-                    echo "<br>Method $action (in controller $controller) not found.";
+                    //echo "<br>Method $action (in controller $controller) not found.";
+                    throw new \Exception("<br>Method $action (in controller $controller) not found.");
                 }
             } else{
-                echo "<br>Controller class $controller not found.";
+                //echo "<br>Controller class $controller not found.";
+                throw new \Exception("<br>Controller class $controller not found.");
             }
         } else{
-            echo '<br>No route matched.';
+            //echo '<br>No route matched.';
+            throw new \Exception('<br>No route matched.', 404);
         }
     }
 
